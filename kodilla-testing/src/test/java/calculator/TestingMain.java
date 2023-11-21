@@ -1,4 +1,4 @@
-package com.kodilla.testing;
+package calculator;
 
 public class TestingMain {
     public static void main(String[] args) {
