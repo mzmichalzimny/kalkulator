@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum;                             // [1]
+package com.kodilla.testing;                             // [1]
 
                   // [2]
 import org.junit.jupiter.api.*;
