@@ -1,4 +1,4 @@
-package collection;
+package com.kodilla.testing.collection;
 
 import org.junit.jupiter.api.*;
 

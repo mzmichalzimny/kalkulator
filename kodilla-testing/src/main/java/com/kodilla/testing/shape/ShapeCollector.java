@@ -25,4 +25,8 @@ public class ShapeCollector {
         }
         return builder.toString();
     }
+
+    public int getShapesSize() {
+        return shapes.size();
+    }
 }
