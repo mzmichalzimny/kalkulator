@@ -1,8 +1,11 @@
 package com.kodilla.testing.forum.statistics;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class ForumStatistics {
     private int usersCount;
-    private int postsCount;
+    private static int postsCount;
     private int commentsCount;
     private double avgPostsPerUser;
     private double avgCommentsPerUser;
@@ -13,9 +16,14 @@ public class ForumStatistics {
         postsCount = statistics.postsCount();
         commentsCount = statistics.commentsCount();
 
-        avgPostsPerUser = usersCount > 0 ? (double) postsCount / usersCount : 0;
-        avgCommentsPerUser = usersCount > 0 ? (double) commentsCount / usersCount : 0;
-        avgCommentsPerPost = postsCount > 0 ? (double) commentsCount / postsCount : 0;
+        if (usersCount > 0) {
+            avgPostsPerUser = (double) postsCount / usersCount;
+            avgCommentsPerUser = (double) commentsCount / usersCount;
+        }
+
+        if (postsCount > 0) {
+            avgCommentsPerPost = (double) commentsCount / postsCount;
+        }
     }
 
     public void showStatistics() {
@@ -30,7 +38,7 @@ public class ForumStatistics {
         return usersCount;
     }
 
-    public int getPostsCount() {
+    public static int getPostsCount() {
         return postsCount;
     }
 
