@@ -7,8 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MovieStore {
-    public static void main(String[] args) {
-    }
+
     public Map<String, List<String>> getMovies() {
         List<String> ironManTranslations = new ArrayList<>();
         ironManTranslations.add("Żelazny Człowiek");
