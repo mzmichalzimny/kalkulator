@@ -7,6 +7,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "COMPANIES")
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWithNameStarting",
+        query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :PREFIX",
+        resultClass = Company.class
+)
 public class Company {
 
     private int id;
