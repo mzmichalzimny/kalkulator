@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +16,7 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskListDao taskListDao;
 
+    @Transactional
     @Test
     void testFindByListName() {
         // Given
@@ -29,7 +31,7 @@ public class TaskListDaoTestSuite {
         List<TaskList> readTaskLists = taskListDao.findByListName(listName);
 
         // Then
-        assertEquals(15, readTaskLists.size());
+        assertEquals(1, readTaskLists.size());
         assertEquals(listName, readTaskLists.get(0).getListName());
         assertEquals(description, readTaskLists.get(0).getDescription());
 
