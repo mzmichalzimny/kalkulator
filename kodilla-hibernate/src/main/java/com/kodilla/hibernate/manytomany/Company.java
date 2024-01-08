@@ -12,6 +12,10 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :PREFIX",
         resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.retrieveCompaniesWithNamesContaining",
+        query = "FROM Company WHERE name LIKE CONCAT('%', :ARG, '%')"
+)
 public class Company {
 
     private int id;

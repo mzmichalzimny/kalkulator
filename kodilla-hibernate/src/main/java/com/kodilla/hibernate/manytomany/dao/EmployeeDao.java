@@ -11,6 +11,9 @@ import java.util.List;
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
-    @Query
+    @Query("SELECT e FROM Employee e WHERE e.lastname = :LASTNAME")
     List<Employee> retrieveEmployeesWithLastname(@Param("LASTNAME") String lastname);
+
+    @Query("SELECT e FROM Employee e WHERE e.lastname LIKE CONCAT('%', :ARG, '%') OR e.firstname LIKE CONCAT('%', :ARG, '%')")
+    List<Employee> retrieveEmployeesWithNamesContaining(@Param("ARG") String nameFragment);
 }

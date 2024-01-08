@@ -11,6 +11,9 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
-    @Query(nativeQuery = true)
+    @Query(value = "SELECT * FROM COMPANIES WHERE NAME LIKE CONCAT(:PREFIX, '%')", nativeQuery = true)
     List<Company> retrieveCompaniesWithNameStarting(@Param("PREFIX") String prefix);
+
+    @Query("SELECT c FROM Company c WHERE c.name LIKE CONCAT('%', :ARG, '%')")
+    List<Company> retrieveCompaniesWithNamesContaining(@Param("ARG") String nameFragment);
 }

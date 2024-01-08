@@ -11,6 +11,10 @@ import java.util.List;
         name = "Employee.retrieveEmployeesWithLastname",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+@NamedQuery(
+        name = "Employee.retrieveEmployeesWithNamesContaining",
+        query = "FROM Employee WHERE lastname LIKE CONCAT('%', :ARG, '%') OR firstname LIKE CONCAT('%', :ARG, '%')"
+)
 public class Employee {
 
     private int id;

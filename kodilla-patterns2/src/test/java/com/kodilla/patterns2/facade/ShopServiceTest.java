@@ -1,15 +1,13 @@
 package com.kodilla.patterns2.facade;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 
 import java.math.BigDecimal;
 
 @SpringBootTest
-@ExtendWith(SpringExtension.class)
 class ShopServiceTest {
 
     @Autowired
