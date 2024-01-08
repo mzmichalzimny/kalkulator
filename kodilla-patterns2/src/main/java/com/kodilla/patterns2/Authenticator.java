@@ -1,4 +1,4 @@
-package com.kodilla.patterns2.facade;
+package com.kodilla.patterns2;
 
 import org.springframework.stereotype.Service;
 

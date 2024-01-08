@@ -1,6 +1,6 @@
-package com.kodilla.patterns2.facade.api;
+package com.kodilla.patterns2.api;
 
-import com.kodilla.patterns2.facade.ShopService;
+import com.kodilla.patterns2.ShopService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
